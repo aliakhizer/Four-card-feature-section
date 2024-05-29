@@ -24,14 +24,16 @@ body {
   min-height: 100vh;
   background-color: var(--VeryLightGray);
 }
-.container {
+/* .container {
   margin: 50px 20px;
   border: 1px solid red;
-}
+} */
 header {
   text-align: center;
   max-width: 500px;
   margin-bottom: 30px;
+  margin: 0 auto;
+  margin-block: 2rem;
 }
 h1 {
   font-weight: 200;
@@ -44,19 +46,42 @@ p {
   color: var(--GrayishBlue);
 }
 main .cards {
-  display: grid;
-  grid-template-columns: repeat(1, fr);
+  margin-block: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
 .cards .card {
+  max-width: 356px;
+
   background-color: white;
   padding: 1.5rem;
   border-radius: 0.5rem;
-  box-shadow: 0px 0px 16px hsl(180, 62%, 55%, 0.5);
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+
+  box-shadow: 0px 0px 16px hsl(180, 62%, 55%, 0.15);
 }
-.cards .card:first-child {
-  border-top: 3px solid red;
+
+.cards .first-card {
+  border-top: 0.5rem solid var(--Cyan);
 }
-.cards .card h3 {
+
+.cards .second-card {
+  border-top: 0.5rem solid var(--Red);
+}
+
+.cards .third-card {
+  border-top: 0.5rem solid var(--Orange);
+}
+
+.cards .fourth-card {
+  border-top: 0.5rem solid var(--Blue);
+}
+.cards .card h2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
@@ -64,5 +89,19 @@ main .cards {
   margin-bottom: 3rem;
 }
 .cards .card img {
-  margin-left: auto;
+  align-self: flex-end;
+}
+
+@media (min-width: 768px) {
+  main .cards {
+    display: flex;
+
+    flex-direction: row;
+  }
+  .col {
+    display: grid;
+    gap: 1rem;
+    align-content: center;
+    justify-content: center;
+  }
 }
